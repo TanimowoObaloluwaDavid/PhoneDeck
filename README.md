@@ -3,6 +3,7 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/TanimowoObaloluwaDavid/PhoneDeck/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/TanimowoObaloluwaDavid/PhoneDeck/actions/workflows/ci.yml/badge.svg"></a>
   <a href="https://github.com/TanimowoObaloluwaDavid/PhoneDeck/releases"><img alt="Release" src="https://img.shields.io/github/v/release/TanimowoObaloluwaDavid/PhoneDeck?color=a3e635&label=release&style=flat-square"></a>
   <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-a3e635?style=flat-square"></a>
   <img alt="Platform" src="https://img.shields.io/badge/Windows-10%20%7C%2011-0ea5e9?style=flat-square">
@@ -68,6 +69,12 @@ Windows, and never sends a byte outside your network.
 No Android SDK is needed: `adb.exe` and `scrcpy-server 3.3.3` ship in `resources/bin`.
 
 ## Quick start
+
+**No Node.js?** Download `PhoneDeck-1.0.0-win-x64.zip` from
+[Releases](https://github.com/TanimowoObaloluwaDavid/PhoneDeck/releases), unzip anywhere and
+run `PhoneDeck.exe`. The build is self-contained.
+
+From source:
 
 ```powershell
 git clone https://github.com/TanimowoObaloluwaDavid/PhoneDeck.git

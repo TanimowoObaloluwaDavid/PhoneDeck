@@ -14,7 +14,7 @@
     <img alt="Download for Windows" src="https://img.shields.io/badge/Download-Windows%20build-a3e635?style=for-the-badge&logo=windows&logoColor=0b0e12">
   </a>
   <a href="#quick-start">
-    <img alt="Run from source" src="https://img.shields.io/badge/Run-from%20source-262d36?style=for-the-badge&logo=github&logoColor=white">
+    <img alt="Run from source" src="https://img.shields.io/badge/Run-from%20source-3d444d?style=for-the-badge&logo=github&logoColor=white">
   </a>
 </p>
 

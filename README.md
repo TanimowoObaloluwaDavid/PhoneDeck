@@ -1,34 +1,45 @@
 <p align="center">
-  <img src="docs/assets/banner.svg" alt="PhoneDeck — your Android phone in a Windows window" width="100%">
+  <img src="docs/assets/banner.png" alt="PhoneDeck — your Android phone in a Windows window" width="100%">
+</p>
+
+<h3 align="center">Mirror and control your Android phone from Windows.</h3>
+
+<p align="center">
+  Notifications, apps, files and device info in one window, over your own Wi-Fi.<br>
+  No account. No cloud. No telemetry.
+</p>
+
+<p align="center">
+  <a href="https://github.com/TanimowoObaloluwaDavid/PhoneDeck/releases/latest">
+    <img alt="Download for Windows" src="https://img.shields.io/badge/Download-Windows%20build-a3e635?style=for-the-badge&logo=windows&logoColor=0b0e12">
+  </a>
+  <a href="#quick-start">
+    <img alt="Run from source" src="https://img.shields.io/badge/Run-from%20source-262d36?style=for-the-badge&logo=github&logoColor=white">
+  </a>
 </p>
 
 <p align="center">
   <a href="https://github.com/TanimowoObaloluwaDavid/PhoneDeck/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/TanimowoObaloluwaDavid/PhoneDeck/actions/workflows/ci.yml/badge.svg"></a>
   <a href="https://github.com/TanimowoObaloluwaDavid/PhoneDeck/releases"><img alt="Release" src="https://img.shields.io/github/v/release/TanimowoObaloluwaDavid/PhoneDeck?color=a3e635&label=release&style=flat-square"></a>
   <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-a3e635?style=flat-square"></a>
-  <img alt="Platform" src="https://img.shields.io/badge/Windows-10%20%7C%2011-0ea5e9?style=flat-square">
+  <img alt="Windows" src="https://img.shields.io/badge/Windows-10%20%7C%2011-0ea5e9?style=flat-square">
   <img alt="Android" src="https://img.shields.io/badge/Android-11%2B-3ddc84?style=flat-square">
-  <img alt="Local only" src="https://img.shields.io/badge/network-LAN%20%2B%20localhost-8b95a1?style=flat-square">
+  <img alt="Network" src="https://img.shields.io/badge/network-LAN%20%2B%20localhost-8b95a1?style=flat-square">
 </p>
 
 <p align="center">
-  <b>Mirror and control your Android phone from Windows.</b><br>
-  Notifications, apps, files and device info in one window — over your own Wi-Fi.<br>
-  No account, no cloud, no telemetry, no “sign in to continue”.
-</p>
-
-<p align="center">
-  <img src="docs/assets/screenshot-mirror.png" alt="PhoneDeck mirroring a phone" width="860">
+  <img src="docs/assets/screenshot-mirror.png" alt="PhoneDeck mirroring a phone, with the notifications panel closed" width="880"><br>
+  <sub>The mirror view — simulated device, real UI.</sub>
 </p>
 
 ---
 
-## Why another phone mirror?
+## Why PhoneDeck
 
-Most “phone on your PC” tools want an account, a subscription, a cloud relay, or all
-three. PhoneDeck uses the protocol Android already ships: **ADB**. The desktop app talks to
-your phone directly on your LAN, decodes the H.264 stream with the GPU already inside
-Windows, and never sends a byte outside your network.
+Most “phone on your PC” tools want an account, a subscription, a cloud relay — or all three.
+PhoneDeck uses the protocol Android already ships: **ADB**. It talks to the phone directly on
+your LAN, decodes H.264 with the GPU already inside Windows, and never sends a byte outside
+your network.
 
 - **Instant** — the stream is scrcpy's encoder, decoded by Chromium's `WebCodecs`.
 - **Local** — the engine binds to `127.0.0.1`; the phone is reached over your own Wi-Fi.
@@ -48,13 +59,19 @@ Windows, and never sends a byte outside your network.
 | **Device** | Model, Android version, resolution, battery, and stream-quality presets. |
 | **Pairing that behaves** | One-click USB setup, code-only Wi-Fi pairing, and automatic reconnect. |
 
+## Screens
+
 <p align="center">
   <img src="docs/assets/screenshot-notifications.png" alt="Notifications panel" width="420">
   <img src="docs/assets/screenshot-apps.png" alt="Apps panel" width="420">
+  <br>
+  <sub>Notifications · Apps</sub>
 </p>
 <p align="center">
   <img src="docs/assets/screenshot-files.png" alt="File browser" width="420">
   <img src="docs/assets/screenshot-device.png" alt="Device panel and quality presets" width="420">
+  <br>
+  <sub>Files · Device &amp; stream quality</sub>
 </p>
 
 <sub>Screenshots use a simulated Pixel device — no real phone data is included.</sub>
@@ -158,7 +175,11 @@ All endpoints are bound to `127.0.0.1:8787`, so nothing outside the machine can 
 | `POST` | `/reconnect` | Saved address first, then mDNS |
 | `POST` | `/mirror/start` · `/mirror/stop` | Stream lifecycle |
 | `GET` | `/mirror/state` | Current state and video metadata |
-| `GET` | `/notifications` · `/apps` · `/files` · `/info` · `/screenshot` | Phone data |
+| `GET` | `/notifications` | Notification shade |
+| `GET` | `/apps` | Installed apps |
+| `GET` | `/files` | Directory listing |
+| `GET` | `/info` | Model, Android version, resolution, battery |
+| `GET` | `/screenshot` | PNG capture of the current screen |
 | `POST` | `/apps/launch` · `/keyevent` · `/action` | Phone actions |
 | `WS` | `/ws` | Binary video frames + JSON control |
 
@@ -209,6 +230,13 @@ The Flutter port in `app/` is complete but needs Visual Studio's C++ workload:
 ```powershell
 flutter build windows
 ```
+
+## Credits
+
+- [scrcpy](https://github.com/Genymobile/scrcpy) — the server that streams video and injects input.
+- [Tango](https://github.com/yume-chan/ya-webadb) — the TypeScript ADB stack the engine is built on.
+- [Electron](https://www.electronjs.org/) — the desktop shell.
+- Android Platform Tools — the bundled `adb.exe`.
 
 ## License
 

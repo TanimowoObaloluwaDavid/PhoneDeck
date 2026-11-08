@@ -1,102 +1,134 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" width="1280" height="360" role="img" aria-label="PhoneDeck — your Android phone in a Windows window">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 560" width="1600" height="560" role="img" aria-label="PhoneDeck — your Android phone in a Windows window">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0b0f14"/>
-      <stop offset="0.55" stop-color="#0a0c0f"/>
-      <stop offset="1" stop-color="#0b1218"/>
+      <stop offset="0" stop-color="#0a0e13"/>
+      <stop offset="0.5" stop-color="#080a0d"/>
+      <stop offset="1" stop-color="#0a1016"/>
     </linearGradient>
     <radialGradient id="glowLime" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#a3e635" stop-opacity="0.22"/>
+      <stop offset="0" stop-color="#a3e635" stop-opacity="0.18"/>
       <stop offset="1" stop-color="#a3e635" stop-opacity="0"/>
     </radialGradient>
     <radialGradient id="glowTeal" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#2dd4bf" stop-opacity="0.20"/>
-      <stop offset="1" stop-color="#2dd4bf" stop-opacity="0"/>
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="lime" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#c4f75c"/>
-      <stop offset="0.55" stop-color="#a3e635"/>
-      <stop offset="1" stop-color="#63c11c"/>
+      <stop offset="0" stop-color="#cdf86a"/>
+      <stop offset="0.5" stop-color="#a3e635"/>
+      <stop offset="1" stop-color="#5fbf1f"/>
     </linearGradient>
-    <linearGradient id="phoneScreen" x1="0.1" y1="0" x2="0.9" y2="1">
-      <stop offset="0" stop-color="#0f3145"/>
-      <stop offset="0.5" stop-color="#0c2637"/>
-      <stop offset="1" stop-color="#07121c"/>
+    <linearGradient id="screen" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#12384f"/>
+      <stop offset="0.45" stop-color="#0d2739"/>
+      <stop offset="1" stop-color="#060f18"/>
+    </linearGradient>
+    <linearGradient id="hairline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#a3e635" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#a3e635" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
     </linearGradient>
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M40 0H0v40" fill="none" stroke="#ffffff" stroke-opacity="0.035" stroke-width="1"/>
+      <path d="M40 0H0v40" fill="none" stroke="#ffffff" stroke-opacity="0.032" stroke-width="1"/>
     </pattern>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
   </defs>
 
-  <rect width="1280" height="360" fill="url(#bg)"/>
-  <rect width="1280" height="360" fill="url(#grid)"/>
-  <circle cx="150" cy="40" r="320" fill="url(#glowLime)"/>
-  <circle cx="1100" cy="60" r="340" fill="url(#glowTeal)"/>
+  <rect width="1600" height="560" fill="url(#bg)"/>
+  <rect width="1600" height="560" fill="url(#grid)"/>
+  <circle cx="180" cy="60" r="420" fill="url(#glowLime)"/>
+  <circle cx="1400" cy="520" r="460" fill="url(#glowTeal)"/>
 
-  <!-- logo -->
-  <g transform="translate(80 104)">
-    <rect x="0" y="0" width="84" height="84" rx="22" fill="url(#lime)"/>
-    <g fill="none" stroke="#0b0e12" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="29" y="18" width="26" height="48" rx="8"/>
-      <path d="M38 24h8"/>
+  <!-- logo mark -->
+  <g transform="translate(96 118)">
+    <ellipse cx="52" cy="112" rx="52" ry="14" fill="#a3e635" opacity="0.18" filter="url(#soft)"/>
+    <rect width="104" height="104" rx="27" fill="url(#lime)"/>
+    <g fill="none" stroke="#0a0d11" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="35" y="21" width="34" height="62" rx="10"/>
+      <path d="M45.5 30h13"/>
     </g>
-    <circle cx="42" cy="58" r="3" fill="#0b0e12"/>
+    <circle cx="52" cy="72" r="3.6" fill="#0a0d11"/>
   </g>
 
-  <!-- wordmark -->
-  <text x="188" y="158" font-family="'Segoe UI', Inter, system-ui, sans-serif" font-size="58" font-weight="700" letter-spacing="-1.5" fill="#f2f5f7">PhoneDeck</text>
+  <!-- wordmark + tagline -->
+  <text x="232" y="192" font-family="'Segoe UI', Inter, system-ui, -apple-system, sans-serif" font-size="92" font-weight="700" letter-spacing="-3" fill="#f5f8fa">PhoneDeck</text>
+  <text x="96" y="292" font-family="'Segoe UI', Inter, system-ui, -apple-system, sans-serif" font-size="34" fill="#94a1b0">Your Android phone, in a Windows window.</text>
 
-  <g transform="translate(188 178)">
-    <rect x="0" y="0" width="76" height="26" rx="13" fill="none" stroke="#a3e635" stroke-opacity="0.55"/>
-    <text x="38" y="18" text-anchor="middle" font-family="'Segoe UI', Inter, system-ui, sans-serif" font-size="12" font-weight="600" letter-spacing="1.5" fill="#a3e635">LOCAL</text>
-  </g>
-
-  <text x="278" y="197" font-family="'Segoe UI', Inter, system-ui, sans-serif" font-size="21" fill="#8b95a1">Your Android phone, in a Windows window.</text>
-
-  <!-- chips -->
-  <g font-family="'Segoe UI', Inter, system-ui, sans-serif" font-size="14" fill="#9aa4b0">
-    <g transform="translate(188 228)">
-      <rect width="128" height="34" rx="17" fill="#12161b" stroke="#242a32"/>
-      <text x="64" y="22" text-anchor="middle">Windows 10/11</text>
+  <!-- pills -->
+  <g font-family="'Segoe UI', Inter, system-ui, -apple-system, sans-serif" font-size="18" font-weight="600">
+    <g transform="translate(96 336)">
+      <rect width="176" height="46" rx="23" fill="#11161c" stroke="#242c35"/>
+      <circle cx="24" cy="23" r="5" fill="#a3e635"/>
+      <text x="42" y="30" fill="#c8d2dd">Windows 10 / 11</text>
     </g>
-    <g transform="translate(328 228)">
-      <rect width="118" height="34" rx="17" fill="#12161b" stroke="#242a32"/>
-      <text x="59" y="22" text-anchor="middle">Android 11+</text>
+    <g transform="translate(288 336)">
+      <rect width="152" height="46" rx="23" fill="#11161c" stroke="#242c35"/>
+      <circle cx="24" cy="23" r="5" fill="#3ddc84"/>
+      <text x="42" y="30" fill="#c8d2dd">Android 11+</text>
     </g>
-    <g transform="translate(458 228)">
-      <rect width="122" height="34" rx="17" fill="#12161b" stroke="#242a32"/>
-      <text x="61" y="22" text-anchor="middle">No cloud</text>
+    <g transform="translate(456 336)">
+      <rect width="168" height="46" rx="23" fill="#11161c" stroke="#242c35"/>
+      <circle cx="24" cy="23" r="5" fill="#22d3ee"/>
+      <text x="42" y="30" fill="#c8d2dd">100% local</text>
     </g>
   </g>
 
   <!-- phone -->
-  <g transform="translate(1002 34)">
-    <rect x="0" y="0" width="190" height="292" rx="30" fill="#101317" stroke="#2a313a" stroke-width="2"/>
-    <rect x="8" y="8" width="174" height="276" rx="24" fill="url(#phoneScreen)"/>
-    <circle cx="95" cy="8" r="4" fill="#0a0c0f"/>
-    <text x="28" y="52" font-family="'Segoe UI', Inter, system-ui, sans-serif" font-size="17" font-weight="600" fill="#ffffff" fill-opacity="0.92">9:41</text>
-    <g fill="#ffffff" fill-opacity="0.5">
-      <rect x="128" y="41" width="4" height="6" rx="2"/>
-      <rect x="135" y="38" width="4" height="9" rx="2"/>
-      <rect x="142" y="35" width="4" height="12" rx="2"/>
-      <rect x="152" y="37" width="18" height="9" rx="3"/>
+  <g transform="translate(1180 54)">
+    <ellipse cx="140" cy="470" rx="150" ry="26" fill="#000000" opacity="0.55" filter="url(#soft)"/>
+    <rect x="0" y="0" width="280" height="452" rx="44" fill="#0d1014" stroke="#48525f" stroke-width="3"/>
+    <rect x="11" y="11" width="258" height="430" rx="35" fill="url(#screen)"/>
+
+    <!-- notch -->
+    <rect x="112" y="22" width="56" height="9" rx="4.5" fill="#05080b"/>
+
+    <!-- status bar -->
+    <text x="34" y="72" font-family="'Segoe UI', Inter, system-ui, sans-serif" font-size="20" font-weight="600" fill="#ffffff" fill-opacity="0.9">9:41</text>
+    <g fill="#ffffff" fill-opacity="0.45">
+      <rect x="188" y="60" width="4" height="7" rx="2"/>
+      <rect x="196" y="57" width="4" height="10" rx="2"/>
+      <rect x="204" y="54" width="4" height="13" rx="2"/>
+      <rect x="216" y="56" width="22" height="11" rx="3.5"/>
     </g>
 
-    <text x="95" y="128" text-anchor="middle" font-family="'Segoe UI', Inter, system-ui, sans-serif" font-size="38" font-weight="700" fill="#ffffff" fill-opacity="0.95">9:41</text>
-    <text x="95" y="150" text-anchor="middle" font-family="'Segoe UI', Inter, system-ui, sans-serif" font-size="11" fill="#ffffff" fill-opacity="0.55">Sun, 8 Nov · 23°</text>
+    <!-- clock -->
+    <text x="140" y="182" text-anchor="middle" font-family="'Segoe UI', Inter, system-ui, sans-serif" font-size="64" font-weight="700" letter-spacing="-2" fill="#ffffff" fill-opacity="0.96">9:41</text>
+    <text x="140" y="214" text-anchor="middle" font-family="'Segoe UI', Inter, system-ui, sans-serif" font-size="15" fill="#ffffff" fill-opacity="0.55">Sun, 8 Nov · 23°</text>
 
+    <!-- icon grid -->
     <g>
-      <rect x="26" y="176" width="34" height="34" rx="10" fill="#38bdf8"/>
-      <rect x="70" y="176" width="34" height="34" rx="10" fill="#fbbf24"/>
-      <rect x="114" y="176" width="34" height="34" rx="10" fill="#34d399"/>
-      <rect x="26" y="220" width="34" height="34" rx="10" fill="#a78bfa"/>
-      <rect x="70" y="220" width="34" height="34" rx="10" fill="#f472b6"/>
-      <rect x="114" y="220" width="34" height="34" rx="10" fill="#22d3ee"/>
+      <g transform="translate(42 244)">
+        <rect width="52" height="52" rx="15" fill="#38bdf8"/><circle cx="26" cy="26" r="12" fill="none" stroke="#0b2331" stroke-width="4"/>
+      </g>
+      <g transform="translate(114 244)">
+        <rect width="52" height="52" rx="15" fill="#fbbf24"/><path d="M14 19h24v16H14z" fill="none" stroke="#3a2606" stroke-width="4"/>
+      </g>
+      <g transform="translate(186 244)">
+        <rect width="52" height="52" rx="15" fill="#34d399"/><path d="M26 14l10 24H16z" fill="none" stroke="#062a1e" stroke-width="4"/>
+      </g>
+      <g transform="translate(42 312)">
+        <rect width="52" height="52" rx="15" fill="#a78bfa"/><circle cx="26" cy="26" r="11" fill="none" stroke="#241552" stroke-width="4"/>
+      </g>
+      <g transform="translate(114 312)">
+        <rect width="52" height="52" rx="15" fill="#f472b6"/><rect x="15" y="15" width="22" height="22" rx="6" fill="none" stroke="#4d0f2b" stroke-width="4"/>
+      </g>
+      <g transform="translate(186 312)">
+        <rect width="52" height="52" rx="15" fill="#22d3ee"/><path d="M14 30l8-8 6 6 10-10" fill="none" stroke="#04323a" stroke-width="4"/>
+      </g>
     </g>
 
-    <rect x="24" y="264" width="134" height="1" fill="#ffffff" fill-opacity="0.06"/>
-    <rect x="58" y="278" width="66" height="4" rx="2" fill="#ffffff" fill-opacity="0.4"/>
+    <!-- dock -->
+    <rect x="30" y="372" width="220" height="52" rx="24" fill="#ffffff" fill-opacity="0.07"/>
+    <g fill="#ffffff" fill-opacity="0.22">
+      <rect x="52" y="386" width="24" height="24" rx="8"/>
+      <rect x="94" y="386" width="24" height="24" rx="8"/>
+      <rect x="136" y="386" width="24" height="24" rx="8"/>
+      <rect x="178" y="386" width="24" height="24" rx="8"/>
+    </g>
+    <rect x="108" y="430" width="64" height="5" rx="2.5" fill="#ffffff" fill-opacity="0.5"/>
   </g>
 
-  <rect x="80" y="330" width="1120" height="1" fill="#ffffff" fill-opacity="0.06"/>
+  <rect x="96" y="512" width="1408" height="2" fill="url(#hairline)"/>
 </svg>

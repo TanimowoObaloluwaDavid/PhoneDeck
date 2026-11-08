@@ -30,14 +30,22 @@ function probe() {
 async function ensureEngine() {
   if (await probe()) return;
 
-  const nodeBinary =
-    process.env.PHONEDECK_NODE ||
-    path.join(process.resourcesPath ?? ROOT, 'node.exe');
+  const bundledNode = path.join(process.resourcesPath ?? ROOT, 'node.exe');
+  const hasBundledNode = require('node:fs').existsSync(bundledNode);
 
-  const node = require('node:fs').existsSync(nodeBinary) ? nodeBinary : 'node';
+  let node = process.env.PHONEDECK_NODE || (hasBundledNode ? bundledNode : 'node');
+  let env = process.env;
+  let args = [path.join(ROOT, 'engine', 'server.mjs')];
 
-  engineProcess = spawn(node, [path.join(ROOT, 'engine', 'server.mjs')], {
+  // Packaged builds have no external Node: reuse this Electron binary as Node.
+  if (!process.env.PHONEDECK_NODE && !hasBundledNode && app.isPackaged) {
+    node = process.execPath;
+    env = { ...process.env, ELECTRON_RUN_AS_NODE: '1' };
+  }
+
+  engineProcess = spawn(node, args, {
     cwd: ROOT,
+    env,
     windowsHide: true,
     stdio: ['ignore', 'pipe', 'pipe'],
   });

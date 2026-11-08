@@ -1,0 +1,36 @@
+{
+  "name": "phonedeck",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Mirror and control an Android phone from Windows. LAN only.",
+  "author": "Tanimowo Obaloluwa",
+  "license": "MIT",
+  "homepage": "https://github.com/TanimowoObaloluwaDavid/PhoneDeck#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TanimowoObaloluwaDavid/PhoneDeck.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TanimowoObaloluwaDavid/PhoneDeck/issues"
+  },
+  "main": "shell/main.cjs",
+  "scripts": {
+    "start": "electron .",
+    "engine": "node engine/server.mjs",
+    "capture": "electron docs/capture/capture.cjs"
+  },
+  "devDependencies": {
+    "electron": "^45.2.3"
+  },
+  "dependencies": {
+    "@yume-chan/adb": "^2.6.4",
+    "@yume-chan/adb-scrcpy": "^2.3.2",
+    "@yume-chan/adb-server-node-tcp": "^2.5.2",
+    "@yume-chan/async": "^4.2.2",
+    "@yume-chan/scrcpy": "^2.3.0",
+    "@yume-chan/stream-extra": "^2.6.1",
+    "@yume-chan/struct": "^2.3.2",
+    "ws": "^8.22.1"
+  }
+}

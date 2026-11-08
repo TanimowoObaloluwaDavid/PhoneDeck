@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Syntax check
+        shell: pwsh
+        run: |
+          $files = @(
+            'engine/server.mjs',
+            'engine/adb.mjs',
+            'engine/mirror.mjs',
+            'engine/parse.mjs',
+            'engine/public/app.js',
+            'shell/main.cjs',
+            'docs/capture/capture.cjs',
+            'docs/capture/preload.cjs'
+          )
+          foreach ($file in $files) {
+            node --check $file
+            if ($LASTEXITCODE -ne 0) { throw "syntax error in $file" }
+          }
+
+      - name: Engine boots and answers /health
+        shell: pwsh
+        run: |
+          $proc = Start-Process node -ArgumentList 'engine/server.mjs' -PassThru -NoNewWindow
+          Start-Sleep -Seconds 4
+          $health = Invoke-RestMethod -Uri 'http://127.0.0.1:8787/health' -TimeoutSec 10
+          $health | ConvertTo-Json -Compress
+          if (-not $health.ok) { throw 'engine did not report ok' }
+          Stop-Process -Id $proc.Id -Force

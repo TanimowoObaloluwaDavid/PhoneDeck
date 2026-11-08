@@ -1,0 +1,28 @@
+# node
+node_modules/
+npm-debug.log*
+
+# runtime logs and captures
+*.log
+desktop.png
+shot.png
+
+# build output
+dist/
+out/
+*.zip
+
+# editor
+.idea/
+.vscode/
+
+# flutter / dart
+app/.dart_tool/
+app/build/
+app/.flutter-plugins
+app/.flutter-plugins-dependencies
+app/windows/flutter/ephemeral/
+
+# misc
+.DS_Store
+Thumbs.db
